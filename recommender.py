@@ -22,7 +22,7 @@ def extract_text_from_pdf(pdf_path):
 
 
 # Function to clean and preprocess text data
-def preprocess_text(text):
+def extract_keywords(text):
     # Remove non-alphanumeric characters and convert to lowercase
     text = re.sub(r'[^a-zA-Z0-9\-\'\@\+\.\/\s]', '', text)
     text = text.lower()
@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     pdf_path = args.filepath
     resume_text = extract_text_from_pdf(pdf_path)
-    preprocessed_resume_text = preprocess_text(resume_text)
+    preprocessed_resume_text = extract_keywords(resume_text)
     keywords = preprocessed_resume_text.split()
     recommended_job_role = recommend_job_role(keywords)
 

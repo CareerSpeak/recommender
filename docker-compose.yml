@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  recommender:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recommender
+    expose:
+      - 65535:65535
+    networks:
+      - careerspeak
+
+networks:
+  careerspeak:
+    external: true
