@@ -10,7 +10,12 @@ services:
       - 65535:65535
     networks:
       - careerspeak
+    volumes:
+      - careerspeak:/home
 
 networks:
   careerspeak:
     external: true
+
+volumes:
+  careerspeak: {}

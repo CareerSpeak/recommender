@@ -6,7 +6,7 @@ WORKDIR /home/python/recommend
 
 COPY requirements.txt ./
 
-RUN apk update && apk add --no-cache py3-scikit-learn
+RUN apk update && apk add --no-cache build-base
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
