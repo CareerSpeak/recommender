@@ -6,9 +6,6 @@ import PyPDF2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-with open('data.json') as json_data:
-    job_role_dataset = json.load(json_data)
-
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_path):
@@ -31,6 +28,8 @@ def extract_keywords(text):
 
 # Function to recommend job roles based on keywords
 def recommend_job_role(keywords):
+    with open('data.json') as json_data:
+        job_role_dataset = json.load(json_data)
     vectorizer = TfidfVectorizer()
     keyword_matrix = vectorizer.fit_transform([' '.join(job_role_dataset[job])
                                                for job in job_role_dataset])
