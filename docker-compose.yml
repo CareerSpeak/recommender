@@ -18,4 +18,5 @@ networks:
     external: true
 
 volumes:
-  careerspeak: {}
+  careerspeak:
+    external: true

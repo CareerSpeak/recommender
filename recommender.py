@@ -26,7 +26,6 @@ def extract_keywords(text):
     # Remove non-alphanumeric characters and convert to lowercase
     text = re.sub(r'[^a-zA-Z0-9\-\'\@\+\.\/\s]', '', str(text))
     text = text.lower()
-    # print(text)
     return text
 
 

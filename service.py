@@ -9,14 +9,14 @@ app = Flask(__name__)
 def recommend():
     args = request.args
 
-    keywords = extract_keywords(args.get('text'))
+    keywords = extract_keywords(args.get('text')).split()
 
     recommendation = recommend_job_role(keywords)
 
     return jsonify(
         {
             'keywords': f'{keywords}',
-            'text': f'{recommendation}'
+            'recommendation': f'{recommendation}'
         })
 
 
