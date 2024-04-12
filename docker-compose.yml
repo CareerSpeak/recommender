@@ -8,15 +8,11 @@ services:
     container_name: recommender
     expose:
       - 65535:65535
+    volumes:
+      - ../resume:/resume:ro
     networks:
       - careerspeak
-    volumes:
-      - careerspeak:/home
 
 networks:
-  careerspeak:
-    external: true
-
-volumes:
   careerspeak:
     external: true
